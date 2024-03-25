@@ -39,7 +39,7 @@ public abstract class User {
         numberOfBooksCheckedOut--;
     }
 
-    private boolean isAbleToCheckout() {
+    public boolean isAbleToCheckout() {
         return numberOfBooksCheckedOut < getLimitOfBooksToCheckOut();
     }
 
