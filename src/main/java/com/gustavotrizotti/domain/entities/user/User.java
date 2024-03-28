@@ -28,7 +28,7 @@ public abstract class User {
     public abstract int getCheckoutTimeLimitInDays();
 
     public void increaseNumberOfBooksCheckedOut() {
-        if (isAbleToCheckout())
+        if (!isAbleToCheckout())
             throw new IllegalNumberOfCheckedOutItemsException("User " + name + " exceeded the number limit number of books checked out!");
         numberOfBooksCheckedOut++;
     }

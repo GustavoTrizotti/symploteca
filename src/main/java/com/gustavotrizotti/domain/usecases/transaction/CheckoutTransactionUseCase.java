@@ -38,9 +38,9 @@ public class CheckoutTransactionUseCase {
         if (book.getBookStatus() == BookStatus.CHECKED_OUT)
             throw new TransactionNotAllowedException("The book with ID " + bookId + " is unavailable!");
 
-        if (!user.isAbleToCheckout())
+        if (!user.isAbleToCheckout()) {
             throw new TransactionNotAllowedException("The user with ID " + userId + " exceeded out the limit!");
-
+        }
         Transaction checkoutTransaction = new Transaction(book, user, user.getCheckoutTimeLimitInDays());
         Integer transactionId = transactionDAO.create(checkoutTransaction);
 
