@@ -6,6 +6,6 @@ import com.gustavotrizotti.domain.usecases.utils.DAO;
 import java.util.Optional;
 
 public interface TransactionDAO extends DAO<Transaction, Integer> {
-    Optional<Transaction> findOpenByBookId(Integer id);
+    Optional<Transaction> findTransactionByBookId(Integer id);
 
 }
